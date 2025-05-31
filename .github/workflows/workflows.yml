@@ -6,7 +6,6 @@ on:
   pull_request:
     branches: [ "main" ]
 
-
 job:
   build:
     runs-on: ubuntu
@@ -26,5 +25,5 @@ job:
           flake8 service --count --max-complexity=10 --max-line-length=127 --statistics
 
       - name: Run unit tests with nose
-        run: nosetests -v --with-spec --spec-color --with-coverage --cover-package=app
+        run: | nosetests -v --with-spec --spec-color --with-coverage --cover-package=app
 
